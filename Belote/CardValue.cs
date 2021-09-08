@@ -4,11 +4,6 @@
 
     public enum CardValue
     {
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
         Seven,
         Eight,
         Nine,
@@ -25,11 +20,6 @@
         {
             var cardValueStrings = new Dictionary<CardValue, string>
             {
-                { CardValue.Two, "2" },
-                { CardValue.Three, "3" },
-                { CardValue.Four, "4" },
-                { CardValue.Five, "5" },
-                { CardValue.Six, "6" },
                 { CardValue.Seven, "7" },
                 { CardValue.Eight, "8" },
                 { CardValue.Nine, "9" },

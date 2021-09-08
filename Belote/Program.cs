@@ -13,6 +13,7 @@
             var gameDrawer = new ConsoleGameDrawer();
 
             var deck = new Deck(gameDrawer);
+            Console.WriteLine(deck.Cards.Count);
 
             foreach (Card card in deck.Cards)
             {
