@@ -13,7 +13,7 @@
         {
             _gameDrawer = gameDrawer;
             Initialize();
-            //Shuffle();
+            Shuffle();
             Cut();
         }
 
@@ -30,9 +30,29 @@
             {
                 foreach (CardValue value in cardValues)
                 {
-                    _cards.Add(new Card(value, suit, _gameDrawer));
+                    AddCard(new Card(value, suit, _gameDrawer));
                 }
             }
+        }
+
+        public void AddCard(Card card)
+        {
+            if (_cards.Contains(card))
+            {
+                throw new ArgumentException("Card is already present inside the deck");
+            }
+
+            _cards.Add(card);
+        }
+
+        public Card PullCard()
+        {
+            if (_cards.Count == 0)
+            {
+                return null;
+            }
+
+            return _cards[^1];
         }
 
         public void Shuffle()
@@ -55,8 +75,9 @@
 
             for (int index = 0; index < cuttingIndex; index++)
             {
-                _cards.Add(_cards[0]);
+                var card = _cards[0];
                 _cards.RemoveAt(0);
+                AddCard(card);
             }
         }
     }
